@@ -1,0 +1,26 @@
+{
+	"name": "assessment",
+	"productName": "assessment",
+	"version": "1.0.0",
+	"description": "assessment",
+	"author": "Martin Adams <heymartinadams@users.noreply.github.com>",
+	"contributors": [],
+	"private": true,
+	"license": "SEE LICENSE IN README.md",
+	"scripts": {
+		"dev": "next"
+	},
+	"dependencies": {
+		"next": "^10.0.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.1.2"
+	},
+	"browserslist": [
+		"> 1%",
+		"IE >= 9",
+		"last 2 versions"
+	]
+}

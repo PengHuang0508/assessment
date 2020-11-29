@@ -2,7 +2,21 @@ const Assessment = ({}) => {
 	/**
 	 * #1. Compare two objects to determine if the first one contains property values in the second one; for example, `person3` below is contained in `person1` below and so should be `true`, while `person3` is not contained in `person2`
 	 */
+
 	const step1 = () => {
+		/*
+		Hi Peng,
+
+		Sorry, may not have been clear enough. #1 checks if all key/values of `firstObj` are contained in `secondObj`. So the first to logs should be `false`, while the last log should be `true`. Whichever direction you’re using, though, your answer to #1 below comes out as `false`, `false`, and `false` (instead of `true` for the third log).
+
+		I’ve included a simpler solution as follows. It’s much simpler — in code, the simpler and more concise, the better. This alternative solution is only 3 lines.
+	 */
+
+		const alternativeMatches = ({ firstObj, secondObj }) =>
+			Object.keys(firstObj).every(x =>
+				Object.keys(secondObj).some(y => x === y && firstObj[x] === secondObj[y])
+			)
+
 		// From my understanding, matches() checks if firstOjb contains secondObj
 		// Sorry, I may misunderstood the direction of the question
 
@@ -11,7 +25,7 @@ const Assessment = ({}) => {
 			// if it's the opposite direction, change it to:
 			// for (property in firstObj) {
 			// 	if (!secondObj.hasOwnProperty(property)) {
-			for (property in secondObj) {
+			for (let property in secondObj) {
 				// O(l), l = number of properties of the object
 				if (!firstObj.hasOwnProperty(property)) {
 					// O(1)
@@ -43,6 +57,14 @@ const Assessment = ({}) => {
 	 */
 
 	const step2 = () => {
+		/*
+		While your solution below is correct, again it’s better to make it simpler. See as follows. Only 2 lines!
+		*/
+
+		// More concise alternative
+		const alternativeRemove = ({ array, values }) =>
+			array.filter(x => !values.some(y => x === y))
+
 		// Overall: O(n + v); n = length of the array, v = length of the values
 		const remove = ({ array, values }) => {
 			const valueSet = new Set(values) // O(v),
@@ -120,6 +142,9 @@ const Assessment = ({}) => {
 			// return hexResult
 
 			// Method 2
+
+			/* Excellent work */
+
 			const numberOfHexDigits = 6
 			let hexString = ['#']
 
@@ -144,6 +169,8 @@ const Assessment = ({}) => {
 	// https://www.youtube.com/watch?v=PNXXqzU4YnM
 
 	const step4 = () => {
+		/* Excellent work! Well done! */
+
 		// Overall: O(n)
 		const luhn = input => {
 			// Sanitize the input
@@ -184,8 +211,8 @@ const Assessment = ({}) => {
 
 	step4()
 
-	// return <h1>Open developer console to read logs.</h1>
+	return <h1>Open developer console to read logs.</h1>
 }
 
-Assessment({})
-// export default Assessment
+// Assessment({})
+export default Assessment

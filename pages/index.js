@@ -214,5 +214,7 @@ const Assessment = ({}) => {
 	return <h1>Open developer console to read logs.</h1>
 }
 
+/* This was intentionally left like this so you can run and test the app via NextJS, see package.json */
+
 // Assessment({})
 export default Assessment
